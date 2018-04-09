@@ -172,7 +172,6 @@
 
       <section class="slide title-slide" data-container-class="no-status">
         <h1>Principles of Computational Thinking</h1>
-        <p>February 2015</p>
         <img class="logo" src="../img/software-carpentry-banner.png" alt="Software Carpentry Logo" />
       </section>
 
@@ -180,7 +179,7 @@
         <h2>What</h2>
 	<ul>
 	  <li>
-	    Big ideas behind everything we teach.
+	    Big ideas behind everything that is taught.
 	  </li>
 	  <li>
 	    Don't make sense until you've seen the examples that they generalize.
@@ -362,7 +361,7 @@
       </section>
 
       <section class="slide" id="#tool-shapes-hand">
-	<h2>Principle #</h2>
+	<h2>Principle #7</h2>
 	<div align="center">
 	  <h3>The tool shapes the hand.</h3>
 	</div>
@@ -394,7 +393,666 @@
 	  Thank you for listening.
 	</aside>
       </section>
+      <section class="slide title-slide" data-container-class="no-status">
+        <h1 style="font-size: 210%;">Best Practices in<br/>Scientific Computing</h1>
+        <img class="logo" src="../img/software-carpentry-banner.png" alt="Software Carpentry Logo" />
+      </section>
 
+      <section class="slide">
+	<h2>Background</h2>
+	<ul>
+	  <li>Software is lab equipment for the 21st Century</li>
+	  <li>Scientists spend a lot of time writing it</li>
+	  <li>But over 90% are self-taught</li>
+	  <li>They don't know what "good" looks like</li>
+	  <li>So we describe 24 practices in 8 groups</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h4 align="center">Good programmers are<br/>10X more productive than average</h4>
+      </section>
+
+      <section class="slide">
+	<h4 align="center">Good <em><strong>practices</strong></em> are<br/>10X more productive than average</h4>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 1</h2>
+	<h3 class="rule">Write Programs for People,<br/>not Computers</h3>
+	<ul>
+	  <li>Hard to tell if code that's difficult to understand is doing what it's supposed to</li>
+	  <li>Hard for other scientists to re-use it...</li>
+	  <li>...including your future self</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 1a</h2>
+	<p class="rule">A program should not require its readers to hold more than a handful of facts in memory at once.</p>
+	<ul>
+	  <li>Short-term memory can hold 7&plusmn;2 items</li>
+	  <li>So break programs into short, readable functions, each taking only a few parameters</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 1b</h2>
+	<p class="rule">Make names consistent, distinctive, and meaningful.</p>
+	<ul>
+	  <li><code>p</code> doesn't help the reader's short term memory as much as <code>pressure</code></li>
+	  <li>Don't use <code>temp</code> for both "temporary" and "temperature"</li>
+	  <li><code>i</code>, <code>j</code> are OK for indices in small scopes</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 1c</h2>
+	<p class="rule">Make code style and formatting consistent.</p>
+	<ul>
+	  <li><em>Which</em> rules don't matter &mdash; <em>having</em> rules does</li>
+	  <li>Brain assumes all differences are significant</li>
+	  <li>Every inconsistency slows comprehension</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+        <h2>Rule 2</h2>
+	<h3 class="rule">Let the Computer Do the Work</h3>
+	<ul>
+	  <li>Computers exist to repeat things quickly</li>
+	  <li>99% accuracy &rArr; 63% of at least one error per hundred repetitions</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 2a</h2>
+	<p class="rule">Make the computer repeat tasks.</p>
+	<ul>
+	  <li>Write little programs for everything</li>
+	  <li>Even if they're called scripts, macros, or aliases</li>
+	  <li>Easier to do this with text-based programming systems than with GUIs</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 2b</h2>
+	<p class="rule">Save recent commands in a file for re-use.</p>
+	<ul>
+	  <li>Most text-based interfaces do this automatically
+	    <ul>
+	      <li>Repeat recent operations using <code>history</code></li>
+	      <li>"Reproducibility in the small"</li>
+	    </ul>
+	  </li>
+	  <li>Saving history supports "reproducibility in the large"
+	    <ul>
+	      <li>An accurate record of how a result was produced</li>
+	      <li><em>If</em> everything can be captured</li>
+	    </ul>
+	  </li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 2c</h2>
+	<p class="rule">Use a build tool to automate workflows.</p>
+	<ul>
+	  <li>Originally developed for compiling programs</li>
+	  <li>Can be used whenever some files depend on others</li>
+	  <li>Makes workflow explicit</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+        <h2>Rule 3</h2>
+	<h3 class="rule">Make Incremental Changes</h3>
+	<ul>
+	  <li>Most scientists don't have "requirements"
+	    <ul>
+	      <li>They are their own users</li>
+	      <li>Code evolves in tandem with research</li>
+	    </ul>
+	  </li>
+	  <li>Closest fit from industry is <em>agile development</em></li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 3a</h2>
+	<p class="rule">Work in small steps with frequent feedback<br/>and course correction.</p>
+	<ul>
+	  <li>People can concentrate for 45-90 minutes without a break</li>
+	  <li>So size each burst of work to fit that</li>
+	  <li>Longer cycle should be a week or two</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 3b</h2>
+	<p class="rule">Use a version control system.</p>
+	<ul>
+	  <li>Tracks changes</li>
+	  <li>Allows them to be undone</li>
+	  <li>Supports independent parallel development</li>
+	  <li>Essential for collaboration <a href="#collaborate">collaboration</a></li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 3c</h2>
+	<p class="rule">Put everything that has been created manually<br/>in version control.</p>
+	<ul>
+	  <li>Not just software: papers, raw images, ...
+	    <ul>
+	      <li>Not gigabytes...</li>
+	      <li>...but metadata <em>about</em> those gigabytes</li>
+	    </ul>
+	  </li>
+	  <li>Leave out things generated by the computer
+	    <ul>
+	      <li>Use build tools to reproduce those instead</li>
+	      <li>Unless they take a very long time to create</li>
+	    </ul>
+	  </li>
+	</ul>
+      </section>
+
+      <section class="slide">
+        <h2>Rule 4</h2>
+	<h3 class="rule">Don't Repeat Yourself (or Others)</h3>
+	<ul>
+	  <li>Anything repeated in two or more places will eventually be wrong in at least one</li>
+	  <li>If it's faster to re-create than to discover or understand, <em>fix it</em></li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 4a</h2>
+	<p class="rule">Every piece of data must have<br/>a single authoritative representation in the system.</p>
+	<ul>
+	  <li>Define constants exactly once</li>
+	  <li>Ditto file formats, geographical locations, ...</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 4b</h2>
+	<p class="rule">Modularize code rather than copying and pasting.</p>
+	<ul>
+	  <li>Reducing code cloning reduces error rates</li>
+	  <li>Cuts the amount of testing needed</li>
+	  <li>And increases comprehension</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 4c</h2>
+	<p class="rule">Re-use code instead of rewriting it.</p>
+	<ul>
+	  <li>It takes experts years to build high-quality numerical or statistical software</li>
+	  <li>Your time is better spent doing science on top of that</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+        <h2>Rule 5</h2>
+	<h3 class="rule">Plan for Mistakes</h3>
+	<ul>
+	  <li>No single practice catches everything</li>
+	  <li>So practice <em>defense in depth</em></li>
+	</ul>
+	<p align="center"><em>Note: improving quality increases productivity</em></p>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 5a</h2>
+	<p class="rule">Add assertions to programs to check their operation.</p>
+	<ul>
+	  <li>"This must be true here or there is an error"</li>
+	  <li>Like diagnostic circuits in hardware</li>
+	  <li>No point proceeding if the program is broken...</li>
+	  <li>...and they serve as <em>executable documentation</em></li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 5b</h2>
+	<p class="rule">Use an off-the-shelf unit testing library.</p>
+	<ul>
+	  <li>Manages setup, execution, and reporting</li>
+	  <li>Re-run unit tests after every change to the code to check for <em>regression</em></li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Testing is Hard</h2>
+	<ul>
+	  <li>"If I knew what the right answer was, I'd have published by now."</li>
+	  <li>Compare to experimental data</li>
+	  <li>Or to analytic solutions of simple problems</li>
+	  <li>Or to old (trusted) programs</li>
+	  <li>If nothing else, forces scientists to document what "errors" are acceptable</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 5c</h2>
+	<p class="rule">Turn bugs into test cases.</p>
+	<ul>
+	  <li>Write a test that fails when the bug is present</li>
+	  <li>Then work on the code until that test passes...</li>
+	  <li>...and no others are failing</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Test-Driven Development</h2>
+	<ul>
+	  <li>Why wait? Always write the tests, then the code</li>
+	  <li>Improves focus</li>
+	  <li>Encourages writing testable code</li>
+	  <li>And ensures tests actually get written...</li>
+	  <li>"Red, green, refactor"</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 5d</h2>
+	<p class="rule">Use a symbolic debugger.</p>
+	<ul>
+	  <li>Explore the program as it runs</li>
+	  <li>Better than print statements
+	    <ul>
+	      <li>You don't have to re-run...</li>
+	      <li>...or guess in advance what you'll need to know</li>
+	    </ul>
+	  </li>
+	  <li>Use <em>breakpoints</em> to stop program at particular points or when particular things are true</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+        <h2>Rule 6</h2>
+	<h3 class="rule">Optimize Software<br/>Only After It Works Correctly</h3>
+	<ul>
+	  <li>Even experts find it hard to predict performance bottlenecks</li>
+	  <li>Small changes to code often have dramatic impact on performance</li>
+	  <li>So get it right, <em>then</em> make it fast</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 6a</h2>
+	<p class="rule">Use a profiler to identify bottlenecks.</p>
+	<ul>
+	  <li>Reports how much time is spent on each line of code</li>
+	  <li>Re-check on new computers or when switching libraries</li>
+	  <li>Summarize across unit tests</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 6b</h2>
+	<p class="rule">Write code in the highest-level language possible.</p>
+	<ul>
+	  <li>People write the same number of lines of code per hour regardless of language</li>
+	  <li>So use the most expressive language available to get the "right" version...</li>
+	  <li>...then rewrite core pieces (possibly in a lower-level language) to get the "fast" version</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+        <h2>Rule 7</h2>
+	<h3 class="rule">Document Design and Purpose,<br/>not Mechanics</h3>
+	<ul>
+	  <li>Goal is to make the next person's life easier</li>
+	  <li>Focus on things the code <em>doesn't</em> say
+	    <ul>
+	      <li>Or doesn't say clearly</li>
+	      <li>E.g., file formats</li>
+	    </ul>
+	  </li>
+	  <li>An example is worth a thousand words...</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 7a</h2>
+	<p class="rule">Document interfaces and reasons,<br/>not implementations.</p>
+	<ul>
+	  <li>Interfaces and reasons change more slowly than implementation details, so documenting them is better economics</li>
+	  <li>And most people care about using code more than understanding it</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 7b</h2>
+	<p class="rule">Refactor code in preference to<br/>explaining how it works.</p>
+	<ul>
+	  <li>Good code can be understood when read aloud</li>
+	  <li>Good programmers build libraries so that solving their problem is straightforward</li>
+	  <li>Again, "red, green, refactor"</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 7c</h2>
+	<p class="rule">Embed the documentation for a piece of software<br/>in that software.</p>
+	<ul>
+	  <li>Specially-formatted comments or strings</li>
+	  <li>More likely to be kept up to date</li>
+	  <li>More accessible to interactive help</li>
+	  <li>Many modern tools embed code in documentation rather than vice versa</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+        <h2 id="collaborate">Rule 8</h2>
+	<h3 class="rule">Collaborate</h3>
+	<ul>
+	  <li>Computers were invented to calculate</li>
+	  <li>The web was invented to collaborate</li>
+	  <li>Science is more fun when it's shared</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 8a</h2>
+	<p class="rule">Use pre-merge code reviews.</p>
+	<ul>
+	  <li>Have someone else review changes <em>before</em> merging in version control</li>
+	  <li>Significantly reduces errors</li>
+	  <li>Good way to share knowledge</li>
+	  <li>It's what makes open source possible</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 8b</h2>
+	<p class="rule">Use pair programming<br/>when bringing someone new up to speed<br/>and when tackling particularly tricky problems.</p>
+	<ul>
+	  <li>Two people, one keyboard, one screen</li>
+	  <li>An extreme form of code review</li>
+	  <li>Can get a bit tired if done all the time...</li>
+	</ul>
+      </section>
+
+      <section class="slide">
+	<h2>Rule 8c</h2>
+	<p class="rule">Use an issue tracking tool.</p>
+	<ul>
+	  <li>A shared to-do list
+	    <ul>
+	      <li>Items can be assigned to people</li>
+	      <li>Supports comments, links to code and papers, etc.</li>
+	    </ul>
+	  </li>
+	  <li>"Version control is where we've been, the issue tracker is where we're going"</li>
+	</ul>
+      </section>
+
+      <section class="slide title-slide" data-container-class="no-status">
+        <h1 style="font-size: 230%;">Software Carpentry:<br/>Lessons Learned</h1>
+        <img class="logo" src="../img/software-carpentry-banner.png" alt="Software Carpentry Logo" />
+      </section>      
+
+      <section class="slide">
+	<h2>Not an Overnight Success</h2>
+	<img src="lanl-1998-07.jpg" alt="Los Alamos National Laboratory, July 1998" />
+	<p align="center" style="font-size: 75%">Los Alamos National Laboratory, July 1998</p>
+	<p align="center">If you were born then, you can drive now.</p>
+      </section>
+      
+      <section class="slide">
+	<h2>Our Results</h2>
+	<ul>
+	  <li>
+	    20% improvement in productivity is common
+	  </li>
+	  <li>
+	    <a href="http://software-carpentry.org/pages/testimonials.html">10X isn't rare</a>
+	  </li>
+	  <li>
+	    Do the old things faster
+	  </li>
+	  <li>
+	    Tackle new problems
+	  </li>
+	  <li>
+	    Ready for HPC, the cloud, big data, ...
+	  </li>
+	  <li>
+	    Start <em>doing</em> open science
+	  </li>
+	</ul>
+      </section>
+      
+      <section class="slide">
+	<h2>Why We Exist</h2>
+	<table>
+	  <tr>
+	    <td align="center"><img src="scanner.png" alt="scanner" /></td>
+	    <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	    <td align="center"><img src="slum.png" alt="slum" /></td>
+	  </tr>
+	  <tr>
+	    <td align="center">HPC, the cloud, big data</td>
+	    <td></td>
+	    <td align="center">the other 92%</td>
+	  </tr>
+	</table>
+      </section>
+      
+      <section class="slide">
+	<h2>What We Teach</h2>
+	<div align="center">
+	  <table>
+	    <tr>
+	      <td>the Unix shell</td>
+	      <td>&nbsp;&rArr;&nbsp;</td>
+	      <td>automate repetitive tasks</td>
+	    </tr>
+	    <tr>
+	      <td>Git</td>
+	      <td>&nbsp;&rArr;&nbsp;</td>
+	      <td>track and share work</td>
+	    </tr>
+	    <tr>
+	      <td>Python or R</td>
+	      <td>&nbsp;&rArr;&nbsp;</td>
+	      <td>build modular code</td>
+	    </tr>
+	    <tr>
+	      <td>SQL</td>
+	      <td>&nbsp;&rArr;&nbsp;</td>
+	      <td>manage data</td>
+	    </tr>
+	  </table>
+	</div>
+	<br/>
+	<p align="center">Advertise the tool, teach the thinking</p>
+      </section>
+      
+      <section class="slide">
+	<h2>How We're Doing</h2>
+	<div align="center">
+	  <p><img src="../img/workshops-2010-2014.png" alt="Workshops 2010-2014" /></p>
+	  <p>2010-2014: 265 workshops for 9000 people</p>
+	</div>
+      </section>
+      
+      <section class="slide">
+	<h2>Lesson #1</h2>
+	<p class="lesson">
+	  Most researchers think programming is
+	  <br/>
+	  a tax they have to pay to do science.
+	</p>
+	<p align="center">
+	  "If I wanted to be a computer scientist,
+	  <br/>
+	  I would have picked a different major in undergrad."
+	</p>
+      </section>
+      
+      <section class="slide">
+	<h2>Lesson #2</h2>
+	<p class="lesson">They don't care about reproducibility.</p>
+	<ul>
+	  <li>Five million papers published 1990&ndash;2000.</li>
+	  <li>100 retracted for computational reasons.</li>
+	  <li>So odds of retraction = 1 in 50,000.</li>
+	  <li>Average paper takes eight months to produce.</li>
+	  <li>Reproducibility worth <em>115 seconds per paper</em>.</li>
+	</ul>
+      </section>
+      
+      <section class="slide">
+	<h2>Lesson #3</h2>
+	<p class="lesson">They care <em>a lot</em> about productivity.</p>
+	<ul>
+	  <li>And about being able to tackle new problems.</li>
+	  <li>And about their careers.</li>
+	</ul>
+      </section>
+      
+      <section class="slide">
+	<h2>Lesson #4</h2>
+	<p class="lesson">The curriculum is full.</p>
+	<ul>
+	  <li>"What do I drop to make room for more computing: quantum or thermo?"</li>
+	  <li>5 minutes per lecture &rArr; 4 courses in a degree</li>
+	  <li>Have to fit in <em>around</em> the curriculum until we achieve critical mass</li>
+	</ul>
+      </section>
+      
+      <section class="slide">
+	<h2>What Winning Looks Like</h2>
+        <table width="100%">
+          <tr>
+	    <td># Reviewers</td>
+	    <td>% Papers</td>
+	  </tr>
+	  <tr>
+	    <td>2</td>
+	    <td>10%</td>
+	  </tr>
+	  <tr>
+	    <td>3</td>
+	    <td>40%</td>
+	  </tr>
+	  <tr>
+	    <td>4</td>
+	    <td>40%</td>
+	  </tr>
+	  <tr>
+	    <td>5</td>
+	    <td>10%</td>
+          </tr>
+	  <tr>
+	    <td>P(at least one reviewer is a believer)</td>
+	    <td>50%</td>
+	  </tr>
+	  <tr>
+	    <td>P(single reviewer is a believer)</td>
+	    <td>18.3%</td>
+	  </tr>
+        </table>
+	<div>
+	  <br/>
+	  <p>We only have to change the mind of 1 scientist in 5</p>
+	</div>
+      </section>
+      
+      <section class="slide">
+	<h2>Lesson #5</h2>
+	<p class="lesson">It's all in the details.</p>
+	<table width="100%">
+	  <tr>
+	    <td align="center">Two days</td>
+	    <td align="center">Charge a fee</td>
+	  </tr>
+	  <tr>
+	    <td align="center">Live coding</td>
+	    <td align="center">Sticky notes</td>
+	  </tr>
+	  <tr>
+	    <td align="center">Group signup</td>
+	    <td align="center">Peer instructors</td>
+	  </tr>
+	</table>
+      </section>
+      
+      <section class="slide">
+	<h2>Lesson #6</h2>
+	<p class="lesson">Incentives, incentives, incentives.</p>
+	<table width="100%">
+	  <tr>
+	    <td align="center">Save the world</td>
+	    <td align="center">Make new friends</td>
+	  </tr>
+	  <tr>
+	    <td align="center">Self-defense</td>
+	    <td align="center">Teach to learn</td>
+	  </tr>
+	</table>
+	<br/>
+	<p align="center"><em>Boost their careers</em></p>
+      </section>
+      
+      <section class="slide">
+	<h2>Lesson #7</h2>
+	<p class="lesson">There's a lot we don't know.</p>
+	<ul>
+	  <li>How to measure programmers' productivity?</li>
+	  <li>How to measure scientists' productivity?</li>
+	  <li>The unknowns <em>don't</em> cancel out</li>
+	</ul>
+	<p align="center">Our biggest failing is lack of systematic assessment</p>
+      </section>
+      
+      <section class="slide">
+	<h2>Lesson #8</h2>
+	<p class="lesson">There's a lot we <u>do</u> know.</p>
+	<table width="100%">
+	  <tr>
+	    <td><a href="http://www.amazon.com/How-Learning-Works-Research-Based-Principles/dp/0470484101/"><img src="how-learning-works.png" /></a></td>
+	    <td><a href="http://www.amazon.com/Making-Software-Really-Works-Believe/dp/0596808321"><img src="making-software.jpg" alt="Making Software" /></a></td>
+	  </tr>
+	</table>
+      </section>
+      
+      <section class="slide">
+	<h2>For Example</h2>
+	<ul>
+	  <li><a href="http://tinyurl.com/guzdial-subgoals">Subgoals improve performance</a></li>
+	  <li><a href="http://tinyurl.com/guzdial-facts-skills">Practice works best for facts,<br/>worked examples for skills</a></li>
+	  <li><a href="http://tinyurl.com/guzdial-peer-instruction">Peer instruction beats lecture</a></li>
+	  <li><a href="http://dl.acm.org/authorize.cfm?key=6833065">Media-first increases retention</a></li>
+	</ul>
+	<p align="center">Read <a href="http://computinged.wordpress.com/">http://computinged.wordpress.com/</a></p>
+      </section>
+      
+      <section class="slide">
+	<h2>Lesson #9</h2>
+	<p class="lesson">Most people would rather fail than change.</p>
+	<p align="center">
+	  Most scientists treat research on teaching and programming
+	  like most politicians treat research on climate change.
+	</p>
+      </section>
+      
+      <section class="slide">
+	<h2>Lesson #10</h2>
+	<p class="lesson">Open isn't just for science.</p>
+	<ul>
+	  <li>Our lessons have had over 150 contributors</li>
+	  <li>We can write them the way we write software and encyclopedias</li>
+	</ul>
+	<p class="lesson">Open collaboration is the real revolution.</p>
+      </section>	  
+	  
       <a class="deck-prev-link">&larr;</span><a class="deck-next-link">&rarr;</a>
       <p class="deck-status deck-progress-10"><span class="deck-status-current"></span> / <span class="deck-status-total"></span></p>
 
